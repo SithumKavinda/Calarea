@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/btn_background.xml" value="0.37333333333333335" />
         <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/circle.xml" value="0.3158974358974359" />
+        <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/circle_shape.xml" value="0.37333333333333335" />
         <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/edit_text_bg.xml" value="0.3158974358974359" />
+        <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/ic_text_icon.xml" value="0.3117948717948718" />
         <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/ic_wave.xml" value="0.3158974358974359" />
+        <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/square_shape.xml" value="0.37333333333333335" />
+        <entry key="..\:/Education/Self Learing/android/app/src/main/res/drawable/triangle_shape.xml" value="0.37333333333333335" />
         <entry key="..\:/Education/Self Learing/android/app/src/main/res/layout/activity_circle_page.xml" value="0.3046875" />
         <entry key="..\:/Education/Self Learing/android/app/src/main/res/layout/activity_main.xml" value="0.2796296296296296" />
         <entry key="..\:/Education/Self Learing/android/app/src/main/res/layout/activity_triangle_page.xml" value="0.3046875" />

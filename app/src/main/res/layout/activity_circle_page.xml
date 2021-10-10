@@ -6,18 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".circle_page">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <RadioButton
+            android:id="@+id/radio_radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusedByDefault="true"
+            android:text="Radius"
+            android:textSize="8pt" />
+
+        <RadioButton
+            android:id="@+id/radio_diameter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diameter"
+            android:textSize="8pt" />
+
+    </RadioGroup>
+
     <EditText
         android:id="@+id/editTextNumberDecimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:hint="Enter Radius"
-        android:padding="10dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/ic_text_icon"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="Enter Radius"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/btn_calc_circle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primaryColor"
+        android:textStyle="bold"
+        android:textSize="8pt"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
