@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calarea">
         <activity
+            android:name=".rectangle_page"
+            android:exported="true" />
+        <activity
+            android:name=".square_page"
+            android:exported="true" />
+        <activity
+            android:name=".triangle_page"
+            android:exported="true" />
+        <activity
+            android:name=".circle_page"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
