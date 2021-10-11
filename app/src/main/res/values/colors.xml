@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primaryColor">#7079D5</color>
-    <color name="cardBg">#26408B</color>
+    <color name="primaryColor">#749275</color>
+    <color name="cardBg">#749275</color>
+    <color name="shapeTint">#FFFF</color>
+    <color name="mainbg">#C5C0C0</color>
 </resources>

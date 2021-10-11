@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calarea">
         <activity
-            android:name=".rectangle_page"
+            android:name=".convert_page"
             android:exported="true" />
         <activity
             android:name=".square_page"

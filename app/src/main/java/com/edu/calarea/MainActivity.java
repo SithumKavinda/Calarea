@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView logo, lottieAnim;
     View box, wave;
     ScrollView mainScroll;
-    CardView circle, triangle, square, rectangle;
+    CardView circle, triangle, square, convert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         circle = findViewById(R.id.card_circle);
         triangle = findViewById(R.id.card_triangle);
         square = findViewById(R.id.card_square);
-        rectangle = findViewById(R.id.card_rectangle);
+        convert = findViewById(R.id.converter);
 
         box.animate().translationY(-1600).setDuration(1000).setStartDelay(2000);
         wave.animate().translationY(-1600).setDuration(1000).setStartDelay(2000);
@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         }, 3000);
 
         //Click functions
+        convert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openConvertPage();
+            }
+        });
+
         circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,13 +65,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openTrianglePage();
-            }
-        });
-
-        rectangle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openRectanlgePage();
             }
         });
 
@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(square);
     }
 
-    public void openRectanlgePage(){
-        Intent rectangle = new Intent(this, rectangle_page.class);
+    public void openConvertPage(){
+        Intent rectangle = new Intent(this, convert_page.class);
         startActivity(rectangle);
     }
 }

@@ -2,21 +2,31 @@ package com.edu.calarea;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class circle_page extends AppCompatActivity {
 
     RadioButton rad, dia;
     EditText userVar;
     Button calc_area_circle;
-    String answer;
+    TextView result;
+    Calculation calc;
+    ImageView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +38,8 @@ public class circle_page extends AppCompatActivity {
         dia = findViewById(R.id.radio_diameter);
         userVar = findViewById(R.id.editTextNumberDecimal);
         calc_area_circle = findViewById(R.id.btn_calc_circle);
+        result = findViewById(R.id.tv_result);
+        btnBack = findViewById(R.id.btn_back);
 
         rad.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -48,33 +60,51 @@ public class circle_page extends AppCompatActivity {
         });
 
         calc_area_circle.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("DefaultLocale")
             @Override
             public void onClick(View view) {
 
-                if(userVar.getHint() == "Enter Radius"){
-                    answer = calcArea_circleRad(userVar);
+                if(!userVar.getText().toString().isEmpty()){
+
+                    calc = new Calculation();
+                    double answer = calc.areaCircle(userVar, rad, dia);
+
+                    //Display answer
+                    result.setText(String.format("%.2f sqmm", answer));
+
+                    //Close keyboard
+                    closeKeyboard();
+
                 }
-                else if(userVar.getHint() == "Enter Diameter"){
-                    answer = calcArea_circleDia(userVar);
+                else{
+                    String type = "";
+
+                    if(rad.isChecked()){
+                        type = "Radius";
+                    }
+                    else if(dia.isChecked()){
+                        type = "Diameter";
+                    }
+
+                    userVar.setError(type + " Cannot be empty");
                 }
-                Toast.makeText(circle_page.this, "Value:" + answer, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
 
-    public String calcArea_circleRad(EditText x){
-        double val = Double.parseDouble(x.getText().toString());
-
-        String ans = Double.toString((22.0/7.0) * val * val);
-
-        return ans;
-    }
-
-    public String calcArea_circleDia(EditText x){
-        double val = Double.parseDouble(x.getText().toString());
-
-        String ans = Double.toString((22.0/7.0) * (val/2) * (val/2));
-
-        return ans;
+    //Close Keyboard
+    private void closeKeyboard(){
+        View view = this.getCurrentFocus();
+        if(view != null){
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
