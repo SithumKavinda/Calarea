@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calarea</string>
+    <string-array name="metric">
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+    </string-array>
 </resources>
